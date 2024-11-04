@@ -32,7 +32,7 @@
 //    printf("Program podaje czy znak jest drukowalny czy kontrolny dla podanego kodu ASCII\n");
 //    printf("Podaj kod: ");
 //
-//    if(scanf_s("%d", &c)!=1)
+//    if(scanf_s("%d", &c)!=1 || getchar() != '\n')
 //        printf("Zle podane dane\n");
 //    else
 //    {
@@ -40,6 +40,8 @@
 //            printf("Podales kod znaku drukowalnego %c\n", c);
 //        else if(iscntrl(c))
 //            printf("Podales kod znaku kontrolnego\n");
+//        else
+//            printf("Nie jest ani kontrolny ani drukowalny\n");
 //    }
 //    printf("Koniec programu.");
 //}
