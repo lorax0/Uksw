@@ -7,7 +7,20 @@
 //
 //int main()
 //{
-//
+//    double x;
+//    printf("Autor: Franciszek Wozniak\n");
+//    printf("Program pobiera liczbe i nastepnie oblicza wartosc funkcji dla niej\n");
+//    printf("Podaj liczbe:\n");
+//    if(scanf_s("%lf",&x) != 1 || getchar() != '\n')
+//        printf("Zle podane dane\n");
+//    else
+//    {
+//        double t = (x-2);
+//        //funkcja f przeksztalcona do t(13+t(17+23t))
+//        double y = t*(13+t*(17+23*t));
+//        printf("Wynik funkcji f dla argumentu %lf, wynosi: %lf\n", x, y);
+//    }
+//    printf("Koniec progamu.");
 //}
 
 
@@ -17,10 +30,26 @@
 
 
 //#include <stdio.h>
+//#include <math.h>
 //
 //int main()
 //{
-//
+//    double x, y;
+//    printf("Autor: Franciszek Wozniak\n");
+//    printf("Program pobiera dwie liczby mniejsze co do modulu od 1 i oblicza wartosc funkcji dla nich\n");
+//    printf("Podaj liczby:\n");
+//    if(scanf_s("%lf",&x) != 1  || getchar() != '\n' ||scanf_s("%lf",&y) != 1  || getchar() != '\n')
+//        printf("Zly typ danych\n");
+//    else if(fabs(x)>=1.0 || fabs(y)>=1.0)
+//        printf("Liczby musza co do modulu byc mniejsze od 1\n");
+//    else
+//    {
+//        double temp1=x*x;
+//        double temp2=temp1+y*y;
+//        double value = y+ sqrt(temp2)+(temp2)/ cos(temp1);
+//        printf("Wartosc funkcji dla argumentow x=%lf, oraz y=%lf, wynosi: %lf\n",x,y,value);
+//    }
+//    printf("Koniec programu.");
 //}
 
 
@@ -38,7 +67,7 @@
 //    printf("Autor: Franciszek Wozniak\n");
 //    printf("Program pobiera dwie liczby i wykonuje dzialanie arytmetyczne\n");
 //    printf("Podaj dwie liczby:\n");
-//    if(scanf_s("%d",&x) != 1||scanf_s("%d",&y) != 1)
+//    if(scanf_s("%d",&x) != 1  || getchar() != '\n' ||scanf_s("%d",&y) != 1  || getchar() != '\n')
 //        printf("Zle podane dane\n");
 //    else
 //    {
@@ -47,7 +76,7 @@
 //        printf("2. Odejmowanie\n");
 //        printf("3. Mnozenie\n");
 //        printf("4. Dzielenie\n");
-//        if(scanf_s("%d",&choice) != 1)
+//        if(scanf_s("%d",&choice) != 1  || getchar() != '\n')
 //            printf("Zle podane dane\n");
 //        else
 //        {
@@ -100,7 +129,7 @@
 //    printf("Autor: Franciszek Wozniak\n");
 //    printf("Program pobiera liczbe i oblicza wartosc funkcji dla tej liczby.\n");
 //    printf("Podaj liczbe:\n");
-//    if(scanf_s("%lf",&x) != 1)
+//    if(scanf_s("%lf",&x) != 1 || getchar() != '\n')
 //        printf("Zle podane dane\n");
 //    else
 //    {
@@ -125,7 +154,7 @@
 //    printf("Autor: Franciszek Wozniak\n");
 //    printf("Program pobiera dwie liczby i oblicza odleglosc od poczatku ukladu wspolrzednych.\n");
 //    printf("Podaj dwie liczby:\n");
-//    if(scanf_s("%lf",&x) != 1||scanf_s("%lf",&y) != 1)
+//    if(scanf_s("%lf",&x) != 1  || getchar() != '\n' ||scanf_s("%lf",&y) != 1 || getchar() != '\n')
 //        printf("Zle podane dane\n");
 //    else
 //    {
@@ -165,12 +194,12 @@
 //    printf("Autor: Franciszek Wozniak\n");
 //    printf("Program pobiera wspolrzedne dwoch wektorow i sprawdza czy sa prostopadle czy rownolegle.\n");
 //    printf("Podaj wspolrzedne pierwszego wektora:\n");
-//    if(scanf_s("%lf",&x1) != 1||scanf_s("%lf",&y1) != 1)
+//    if(scanf_s("%lf",&x1) != 1  || getchar() != '\n' ||scanf_s("%lf",&y1) != 1 || getchar() != '\n')
 //        printf("Zle podane dane\n");
 //    else
 //    {
 //        printf("Podaj wspolrzedne drugiego wektora:\n");
-//        if(scanf_s("%lf",&x2) != 1||scanf_s("%lf",&y2) != 1)
+//        if(scanf_s("%lf",&x2) != 1 || getchar() != '\n' ||scanf_s("%lf",&y2) != 1 || getchar() != '\n')
 //            printf("Zle podane dane\n");
 //        else
 //        {
@@ -203,14 +232,19 @@
 //    printf("1. Bok i spuszczona nan wysokosc\n");
 //    printf("2. Dwa boki i kat miedzy nimi\n");
 //    printf("3. Trzy boki\n");
-//    scanf_s("%d",&choice);
+//    if(scanf_s("%d",&choice) != 1 || getchar() != '\n')
+//    {
+//        printf("Zle podane dane\n");
+//        printf("Koniec programu.");
+//        return 0;
+//    }
 //    switch (choice)
 //    {
 //        case 1:
 //        {
 //            double a,h;
 //            printf("Podaj dlugosc boku, oraz wysokosc.\n");
-//            if(scanf_s("%lf",&a) != 1||scanf_s("%lf",&h) != 1)
+//            if(scanf_s("%lf",&a) != 1  || getchar() != '\n' ||scanf_s("%lf",&h) != 1 || getchar() != '\n')
 //                printf("Zle podane dane\n");
 //            else
 //            {
@@ -222,13 +256,13 @@
 //        {
 //            double a,b;
 //            printf("Podaj dlugosc pierwszego boku, nastepnie drugiego boku.\n");
-//            if(scanf_s("%lf",&a) != 1||scanf_s("%lf",&b) != 1)
+//            if(scanf_s("%lf",&a) != 1  || getchar() != '\n' ||scanf_s("%lf",&b) != 1 || getchar() != '\n')
 //                printf("Zle podane dane\n");
 //            else
 //            {
 //                int choice2;
 //                printf("Wybierz czy chcesz podac kat w radianach czy stopniach\n1:Radiany\n2:Stopnie\n");
-//                if(scanf_s("%d",&choice2) != 1)
+//                if(scanf_s("%d",&choice2) != 1 || getchar() != '\n')
 //                    printf("Zle podane dane\n");
 //                else
 //                {
@@ -236,7 +270,7 @@
 //                    {
 //                        double alfa;
 //                        printf("Podaj kat w radianach\n");
-//                        if(scanf_s("%lf",&alfa) != 1)
+//                        if(scanf_s("%lf",&alfa) != 1 || getchar() != '\n')
 //                            printf("Zle podane dane\n");
 //                        else
 //                            printf("Pole trojkata wynosi: %lf\n", a*b*sin(alfa)/2);
@@ -245,7 +279,7 @@
 //                    {
 //                        double alfa;
 //                        printf("Podaj kat w stopniach\n");
-//                        if(scanf_s("%lf",&alfa) != 1)
+//                        if(scanf_s("%lf",&alfa) != 1 || getchar() != '\n')
 //                            printf("Zle podane dane\n");
 //                        else
 //                            printf("Pole trojkata wynosi: %lf\n", a*b*sin(alfa*M_PI/180.0)/2);
@@ -260,7 +294,7 @@
 //        {
 //            double a,b,c;
 //            printf("Podaj dlugosc pierwszego boku, nastepnie drugiego boku, oraz trzeciego boku.\n");
-//            if(scanf_s("%lf",&a) != 1 || scanf_s("%lf",&b) != 1 || scanf_s("%lf",&c) != 1)
+//            if(scanf_s("%lf",&a) != 1 || getchar() != '\n' || scanf_s("%lf",&b) != 1 || getchar() != '\n' || scanf_s("%lf",&c) != 1 || getchar() != '\n')
 //                printf("Zle podane dane\n");
 //            else
 //            {
@@ -308,7 +342,7 @@
 //    printf("Autor: Franciszek Wozniak\n");
 //    printf("Program pobiera trzy liczby i znajduje najmniejsza.\n");
 //    printf("Podaj trzy liczby:\n");
-//    if(scanf_s("%lf",&x) != 1 || scanf_s("%lf",&y) != 1 || scanf_s("%lf",&z) != 1)
+//    if(scanf_s("%lf",&x) != 1  || getchar() != '\n' || scanf_s("%lf",&y) != 1  || getchar() != '\n' || scanf_s("%lf",&z) != 1  || getchar() != '\n')
 //        printf("Zle podane dane\n");
 //    else
 //    {
