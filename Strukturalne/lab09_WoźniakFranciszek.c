@@ -11,23 +11,40 @@ int LoadNumber(void)
     return number;
 }
 
+void DrawSignLine(int length, char sign)
+{
+    for (int i = 0; i < length; i++)
+    {
+        putchar(sign);
+    }
+}
+
+void DrawStarLine(int length)
+{
+    DrawSignLine(length, '*');
+}
+
+void Autor(void)
+{
+    printf("Autor: Franciszek Wozniak\n");
+}
 
 /*===========================================================================*/
 /*                               ZADANIE 67                                  */
 /*===========================================================================*/
 
-
-
-//int main()
+//void Info(void)
 //{
-//    printf("Autor: Franciszek Wozniak\n");
+//    Autor();
 //    printf("Program rysuje proszona ilosc gwiazdek w jednej linii\n");
 //    printf("Podaj ilosc gwiazdek: ");
+//}
+//
+//int main()
+//{
+//    Info();
 //    int number = LoadNumber();
-//    for (int i = 0; i < number; i++)
-//    {
-//            putchar('*');
-//    }
+//    DrawStarLine(number);
 //    printf("\nKoniec programu.");
 //}
 
@@ -36,21 +53,27 @@ int LoadNumber(void)
 /*                               ZADANIE 68                                  */
 /*===========================================================================*/
 
-
-//int main()
+//void Info(void)
 //{
-//    printf("Autor: Franciszek Wozniak\n");
+//    Autor();
 //    printf("Program rysuje kwadrat zlozony z gwiazdek\n");
 //    printf("Podaj szerokosc kwadratu: ");
-//    int number = LoadNumber();
-//    for (int i = 0; i < number; i++)
+//}
+//
+//void DrawStarSquare(int width)
+//{
+//    for (int i = 0; i < width; i++)
 //    {
-//        for (int j = 0; j < number; j++)
-//        {
-//            putchar('*');
-//        }
+//        DrawStarLine(width);
 //        printf("\n");
 //    }
+//}
+//
+//int main()
+//{
+//    Info();
+//    int number = LoadNumber();
+//    DrawStarSquare(number);
 //    printf("\nKoniec programu.");
 //}
 
@@ -59,21 +82,27 @@ int LoadNumber(void)
 /*                               ZADANIE 69                                  */
 /*===========================================================================*/
 
-
-//int main()
+//void Info(void)
 //{
-//    printf("Autor: Franciszek Wozniak\n");
+//    Autor();
 //    printf("Program rysuje prostokat o dwa razy mniejszej szerokosci niz dlugosci zlozony z gwiazdek\n");
 //    printf("Podaj szerokosc prostokata: ");
-//    int number = LoadNumber();
-//    for (int i = 0; i < number; i++)
+//}
+//
+//void DrawStarRectangle(int height)
+//{
+//    for (int i = 0; i < height; i++)
 //    {
-//        for (int j = 0; j < number*2; j++)
-//        {
-//            putchar('*');
-//        }
+//        DrawStarLine(height*2);
 //        printf("\n");
 //    }
+//}
+//
+//int main()
+//{
+//    Info();
+//    int number = LoadNumber();
+//    DrawStarRectangle(number);
 //    printf("\nKoniec programu.");
 //}
 
@@ -82,21 +111,27 @@ int LoadNumber(void)
 /*                               ZADANIE 70                                  */
 /*===========================================================================*/
 
-
-//int main()
+//void Info(void)
 //{
-//    printf("Autor: Franciszek Wozniak\n");
+//    Autor();
 //    printf("Program rysuje trojkat z warunkami z zadania z gwiazdek\n");
 //    printf("Podaj szerokosc trojkata: ");
-//    int number = LoadNumber();
-//    for (int i = 1; i <= number; i++)
+//}
+//
+//void DrawStarTriangle(int width)
+//{
+//    for (int i = 1; i <= width; i++)
 //    {
-//        for (int j = 0; j < i; j++)
-//        {
-//            putchar('*');
-//        }
+//        DrawStarLine(i);
 //        printf("\n");
 //    }
+//}
+//
+//int main()
+//{
+//    Info();
+//    int number = LoadNumber();
+//    DrawStarTriangle(number);
 //    printf("\nKoniec programu.");
 //}
 
@@ -105,26 +140,28 @@ int LoadNumber(void)
 /*                               ZADANIE 71                                  */
 /*===========================================================================*/
 
-
-
-//int main()
+//void Info(void)
 //{
-//    printf("Autor: Franciszek Wozniak\n");
+//    Autor();
 //    printf("Program rysuje trojkat z warunkami z zadania z gwiazdek\n");
 //    printf("Podaj szerokosc trojkata: ");
-//    int number = LoadNumber();
-//    for (int i = 1; i <= number; i++)
+//}
+//
+//void DrawTriangle(int width)
+//{
+//    for (int i = 1; i <= width; i++)
 //    {
-//        for (int j = 0; j < number-i; j++)
-//        {
-//            putchar(' ');
-//        }
-//        for (int j = 0; j < i*2-1; j++)
-//        {
-//            putchar('*');
-//        }
+//        DrawSignLine(width-i, ' ');
+//        DrawStarLine(i*2-1);
 //        printf("\n");
 //    }
+//}
+//
+//int main()
+//{
+//    Info();
+//    int number = LoadNumber();
+//    DrawTriangle(number);
 //    printf("\nKoniec programu.");
 //}
 
@@ -133,47 +170,44 @@ int LoadNumber(void)
 /*                               ZADANIE 72                                  */
 /*===========================================================================*/
 
-//void Header(int number)
+//void Info(void)
 //{
-//    printf("    ");
-//    for (int i = 1; i <= number; i++)
-//    {
-//        printf("%5d ", i);
-//    }
-//    printf("\n");
+//    Autor();
+//    printf("Program rysuje tabliczke mnozenia do podanej liczby\n");
 //}
 //
-//void Line(int number)
+//void Header(int number)
 //{
-//    for (int i = 0; i < 6*number+3; i++)
+//    printf("     ");
+//    for (int i = 1; i <= number; i++)
 //    {
-//        printf("-");
+//        printf("%4d ", i);
 //    }
 //    printf("\n");
 //}
 //
 //void Table(int number)
 //{
+//    printf("\n");
 //    for (int i = 1; i <= number; i++)
 //    {
-//        printf("%d | ", i);
+//        printf("%2d | ", i);
 //        for (int j = 1; j <= number; j++)
 //        {
-//            printf("%5d ", i*j);
+//            printf("%4d ", i*j);
 //        }
 //        printf("\n");
 //    }
 //}
 //
+//#define Width 15
+//
 //int main()
 //{
-//    printf("Autor: Franciszek Wozniak\n");
-//    printf("Program rysuje tabliczke mnozenia do podanej liczby\n");
-//    printf("Podaj liczbe: ");
-//    int number = LoadNumber();
-//    Header(number);
-//    Line(number);
-//    Table(number);
+//    Info();
+//    Header(Width);
+//    DrawSignLine(5*(Width+1), '-');
+//    Table(Width);
 //    printf("\nKoniec programu.");
 //}
 
@@ -249,10 +283,16 @@ int LoadNumber(void)
 //    }
 //}
 //
+//void Info(void)
+//{
+//    Autor();
+//    printf("Program wypisze tabele znakow\n");
+//}
+//
 //int main()
 //{
+//    Info();
 //    printf("Autor: Franciszek Wozniak\n");
-//    printf("Program wypisze tabele znakow\n");
 //    for (int i = 0; i <= 255; i++)
 //    {
 //        WyswietlFraze(i);
@@ -264,26 +304,41 @@ int LoadNumber(void)
 /*                               ZADANIE  74                                 */
 /*===========================================================================*/
 
-
-//int main()
+//void Info(void)
 //{
-//    printf("Autor: Franciszek Wozniak\n");
+//    Autor();
 //    printf("Program wypisze sume do podanej liczby\n");
 //    printf("Podaj liczbe: ");
-//    int number = LoadNumber();
+//}
+//
+//int NumberWithAllSameDigits(int digitsCount)
+//{
+//    int tempNumber =0;
+//    for (int j = 0; j < digitsCount; j++)
+//    {
+//        tempNumber+=digitsCount*pow(10, j);
+//    }
+//    return tempNumber;
+//}
+//
+//void SumWithWritingComponents(int number)
+//{
 //    int sum = 0;
 //    for (int i = 1; i <= number; i++)
 //    {
 //        if(i!=1)
 //            printf(" + ");
-//        int tempNumber=0;
-//        for (int j = 0; j < i; j++)
-//        {
-//            tempNumber+=i*pow(10, j);
-//        }
+//        int tempNumber=NumberWithAllSameDigits(i);
 //        sum += tempNumber;
 //        printf("%d", tempNumber);
 //    }
 //    printf(" = %d", sum);
+//}
+//
+//int main()
+//{
+//    Info();
+//    int number = LoadNumber();
+//    SumWithWritingComponents(number);
 //    printf("\nKoniec programu.");
 //}
